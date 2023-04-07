@@ -107,7 +107,7 @@ function scrollToElement(elementId) {
   const elementTop = elementRect.top + offset;
   const elementHeight = elementRect.height;
   const windowHeight = window.innerHeight;
-  const scrollTarget = Math.floor(elementTop + elementHeight / 2 - windowHeight / 2);
+  const scrollTarget = Math.floor(elementTop + elementHeight / 2 - windowHeight / 2) + 2000;
   window.scrollTo({
     top: scrollTarget,
     behavior: 'smooth'
