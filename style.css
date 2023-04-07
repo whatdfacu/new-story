@@ -63,11 +63,6 @@ body {
 .image {
   max-height: 40vh;
   max-width: 40vw;
-/*   margin-bottom: 100px; */
-}
-
-.center {
-  margin: 20vh auto;
 }
 
 #first-slide {
@@ -78,21 +73,10 @@ body {
   position: relative;
 }
 
-.dashed-line path {
-  stroke-dasharray: 10;
-  stroke-dashoffset: 100;
-  animation: dash 8s linear forwards;
-  animation-iteration-count: infinite;
-}
-
 @keyframes dash {
   to {
     stroke-dashoffset: 0;
   }
-}
-
-.center-dashed {
-  margin: 0 20vw;
 }
 
 #section2{
