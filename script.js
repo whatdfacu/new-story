@@ -1,3 +1,14 @@
+const mainParagraph = document.getElementById("main-paragraph");
+const mainTitle = document.getElementById("main-title");
+const playBtn = document.getElementById("play-btn");
+const primerParrafo = document.getElementById("primer-parrafo");
+const segundoParrafo = document.getElementById("segundo-parrafo");
+const tercerParrafo = document.getElementById("tercer-parrafo");
+const firstDownBtn = document.getElementById("first-down-btn");
+const secondDownBtn = document.getElementById("second-down-btn");
+const thirdDownBtn = document.getElementById("third-down-btn");
+
+
 function fadeIn(el) {
   el.style.opacity = 0;
 
@@ -34,17 +45,21 @@ function isScrolledIntoView(el) {
   return isVisible;
 }
 
-const mainParagraph = document.getElementById("main-paragraph");
-const playBtn = document.getElementById("play-btn");
-const mainTitle = document.getElementById("main-title");
-const firstDownBtn = document.getElementById("first-down-btn");
-const secondDownBtn = document.getElementById("second-down-btn");
-const primerParrafo = document.getElementById("primer-parrafo");
-const segundoParrafo = document.getElementById("segundo-parrafo");
+window.addEventListener("scroll", () => {
+  const paragraphs = document.querySelectorAll(".paragraph");
+  const triggerBottom = window.innerHeight * 0.8;
 
+  paragraphs.forEach((paragraph) => {
+    console.log("animation");
+    const paragraphTop = paragraph.getBoundingClientRect().top;
 
-/* const firstPar = document.getElementById */
-
+    if (paragraphTop < triggerBottom) {
+      paragraph.classList.add("animate");
+    } else {
+      paragraph.classList.remove("animate");
+    }
+  });
+});
 
 const audio = new Audio("./music/Pink Floyd - Shine On You Crazy Diamond 1-5.mp3");
 
@@ -52,6 +67,7 @@ fadeIn(mainParagraph);
 fadeIn(mainTitle);
 fadeIn(firstDownBtn);
 fadeIn(secondDownBtn);
+fadeIn(thirdDownBtn);
 
 playBtn.onclick = function () {
   fadeOut(playBtn)
@@ -84,17 +100,23 @@ playBtn.onclick = function () {
   setTimeout(scrollToMainTitle, 500);
 };
 
-function scrollToTop() {
-  const secondDownBtnTop = secondDownBtn.getBoundingClientRect().bottom;
-  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
+function scrollToElement(elementId) {
+  const element = document.getElementById(elementId);
+  const elementRect = element.getBoundingClientRect();
+  const offset = window.pageYOffset || document.documentElement.scrollTop;
+  const elementTop = elementRect.top + offset;
+  const elementHeight = elementRect.height;
+  const windowHeight = window.innerHeight;
+  const scrollTarget = Math.floor(elementTop + elementHeight / 2 - windowHeight / 2);
   window.scrollTo({
-    top: currentScroll + primerParrafoTop,
-    behavior: "smooth"
+    top: scrollTarget,
+    behavior: 'smooth'
   });
 }
 
-firstDownBtn.addEventListener("click", scrollToTop);
+firstDownBtn.addEventListener("click", function() {
+  scrollToElement("primer-parrafo");
+});
 
 function scrollToElement(elementId) {
   const element = document.getElementById(elementId);
@@ -114,22 +136,21 @@ secondDownBtn.addEventListener("click", function() {
   scrollToElement("segundo-parrafo");
 });
 
-
-
-
-window.addEventListener("scroll", () => {
-  const paragraphs = document.querySelectorAll(".paragraph");
-  const triggerBottom = window.innerHeight * 0.8;
-
-  paragraphs.forEach((paragraph) => {
-    console.log("animation");
-    const paragraphTop = paragraph.getBoundingClientRect().top;
-
-    if (paragraphTop < triggerBottom) {
-      paragraph.classList.add("animate");
-    } else {
-      paragraph.classList.remove("animate");
-    }
+function scrollToElement(elementId) {
+  const element = document.getElementById(elementId);
+  const elementRect = element.getBoundingClientRect();
+  const offset = window.pageYOffset || document.documentElement.scrollTop;
+  const elementTop = elementRect.top + offset;
+  const elementHeight = elementRect.height;
+  const windowHeight = window.innerHeight;
+  const scrollTarget = Math.floor(elementTop + elementHeight / 2 - windowHeight / 2);
+  window.scrollTo({
+    top: scrollTarget,
+    behavior: 'smooth'
   });
+}
+
+thirdDownBtn.addEventListener("click", function() {
+  scrollToElement("tercer-parrafo");
 });
 
