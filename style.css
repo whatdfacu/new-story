@@ -73,12 +73,6 @@ body {
   position: relative;
 }
 
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
 #section2{
   background-image: url("./img/pexels-pixabay-355887.jpg");
   background-size: 100vw 100vh;
