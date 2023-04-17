@@ -158,3 +158,39 @@ thirdDownBtn.addEventListener("click", function() {
   scrollToElement("tercer-parrafo");
 });
 
+function scrollToElement(elementId) {
+  const element = document.getElementById(elementId);
+  const elementRect = element.getBoundingClientRect();
+  const offset = window.pageYOffset || document.documentElement.scrollTop;
+  const elementTop = elementRect.top + offset;
+  const elementHeight = elementRect.height;
+  const windowHeight = window.innerHeight;
+  const scrollTarget = Math.floor(elementTop + elementHeight / 2 - windowHeight / 2);
+  window.scrollTo({
+    top: scrollTarget,
+    behavior: 'smooth'
+  });
+}
+
+fourthDownBtn.addEventListener("click", function() {
+  scrollToElement("cuarto-parrafo");
+});
+
+function scrollToElement(elementId) {
+  const element = document.getElementById(elementId);
+  const elementRect = element.getBoundingClientRect();
+  const offset = window.pageYOffset || document.documentElement.scrollTop;
+  const elementTop = elementRect.top + offset;
+  const elementHeight = elementRect.height;
+  const windowHeight = window.innerHeight;
+  const scrollTarget = Math.floor(elementTop + elementHeight / 2 - windowHeight / 2);
+  window.scrollTo({
+    top: scrollTarget,
+    behavior: 'smooth'
+  });
+}
+
+fifthDownBtn.addEventListener("click", function() {
+  scrollToElement("quinto-parrafo");
+});
+
