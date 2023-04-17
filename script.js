@@ -7,6 +7,8 @@ const tercerParrafo = document.getElementById("tercer-parrafo");
 const firstDownBtn = document.getElementById("first-down-btn");
 const secondDownBtn = document.getElementById("second-down-btn");
 const thirdDownBtn = document.getElementById("third-down-btn");
+const fourthDownBtn = document.getElementById("fourth-down-btn");
+const fifthDownBtn = document.getElementById("fifth-down-btn");
 
 
 function fadeIn(el) {
@@ -68,6 +70,8 @@ fadeIn(mainTitle);
 fadeIn(firstDownBtn);
 fadeIn(secondDownBtn);
 fadeIn(thirdDownBtn);
+fadeIn(fourthDownBtn);
+fadeIn(fifthDownBtn);
 
 playBtn.onclick = function () {
   fadeOut(playBtn)
