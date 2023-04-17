@@ -9,6 +9,7 @@ const secondDownBtn = document.getElementById("second-down-btn");
 const thirdDownBtn = document.getElementById("third-down-btn");
 const fourthDownBtn = document.getElementById("fourth-down-btn");
 const fifthDownBtn = document.getElementById("fifth-down-btn");
+const video = document.getElementById("video");
 
 
 function fadeIn(el) {
@@ -72,6 +73,7 @@ fadeIn(secondDownBtn);
 fadeIn(thirdDownBtn);
 fadeIn(fourthDownBtn);
 fadeIn(fifthDownBtn);
+fadeIn(video);
 
 playBtn.onclick = function () {
   fadeOut(playBtn)
