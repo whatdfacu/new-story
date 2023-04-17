@@ -105,7 +105,7 @@ playBtn.onclick = function () {
   setTimeout(scrollToMainTitle, 500);
 };
 
-video.onclick = function () {
+sixthDownBtn.onclick = function () {
   if (!audio.paused) {
     audio.pause();
   }
