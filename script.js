@@ -9,6 +9,7 @@ const secondDownBtn = document.getElementById("second-down-btn");
 const thirdDownBtn = document.getElementById("third-down-btn");
 const fourthDownBtn = document.getElementById("fourth-down-btn");
 const fifthDownBtn = document.getElementById("fifth-down-btn");
+const sixthDownBtn = document.getElementById("sixth-down-btn");
 const video = document.getElementById("video");
 
 
@@ -73,6 +74,7 @@ fadeIn(secondDownBtn);
 fadeIn(thirdDownBtn);
 fadeIn(fourthDownBtn);
 fadeIn(fifthDownBtn);
+fadeIn(sixthDownBtn);
 fadeIn(video);
 
 playBtn.onclick = function () {
@@ -194,5 +196,23 @@ function scrollToElement(elementId) {
 
 fifthDownBtn.addEventListener("click", function() {
   scrollToElement("quinto-parrafo");
+});
+
+function scrollToElement(elementId) {
+  const element = document.getElementById(elementId);
+  const elementRect = element.getBoundingClientRect();
+  const offset = window.pageYOffset || document.documentElement.scrollTop;
+  const elementTop = elementRect.top + offset;
+  const elementHeight = elementRect.height;
+  const windowHeight = window.innerHeight;
+  const scrollTarget = Math.floor(elementTop + elementHeight / 2 - windowHeight / 2);
+  window.scrollTo({
+    top: scrollTarget,
+    behavior: 'smooth'
+  });
+}
+
+fifthDownBtn.addEventListener("click", function() {
+  scrollToElement("video");
 });
 
