@@ -218,5 +218,6 @@ fifthDownBtn.addEventListener("click", function() {
 
 video.onclick = function() {
   audio.pause();
+  document.body.classList.remove('playing');
 };
 
