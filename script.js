@@ -216,3 +216,7 @@ fifthDownBtn.addEventListener("click", function() {
   scrollToElement("video");
 });
 
+video.onclick = function() {
+  audio.pause();
+};
+
