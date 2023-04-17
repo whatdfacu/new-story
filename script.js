@@ -1,9 +1,6 @@
 const mainParagraph = document.getElementById("main-paragraph");
 const mainTitle = document.getElementById("main-title");
 const playBtn = document.getElementById("play-btn");
-const primerParrafo = document.getElementById("primer-parrafo");
-const segundoParrafo = document.getElementById("segundo-parrafo");
-const tercerParrafo = document.getElementById("tercer-parrafo");
 const firstDownBtn = document.getElementById("first-down-btn");
 const secondDownBtn = document.getElementById("second-down-btn");
 const thirdDownBtn = document.getElementById("third-down-btn");
@@ -108,6 +105,12 @@ playBtn.onclick = function () {
   setTimeout(scrollToMainTitle, 500);
 };
 
+video.onclick = function () {
+  if (!audio.paused) {
+    audio.pause();
+  }
+};
+
 function scrollToElement(elementId) {
   const element = document.getElementById(elementId);
   const elementRect = element.getBoundingClientRect();
@@ -115,7 +118,7 @@ function scrollToElement(elementId) {
   const elementTop = elementRect.top + offset;
   const elementHeight = elementRect.height;
   const windowHeight = window.innerHeight;
-  const scrollTarget = Math.floor(elementTop + elementHeight / 2 - windowHeight / 2) + 2000;
+  const scrollTarget = Math.floor(elementTop + elementHeight / 2 - windowHeight / 2);
   window.scrollTo({
     top: scrollTarget,
     behavior: 'smooth'
@@ -126,98 +129,22 @@ firstDownBtn.addEventListener("click", function() {
   scrollToElement("primer-parrafo");
 });
 
-function scrollToElement(elementId) {
-  const element = document.getElementById(elementId);
-  const elementRect = element.getBoundingClientRect();
-  const offset = window.pageYOffset || document.documentElement.scrollTop;
-  const elementTop = elementRect.top + offset;
-  const elementHeight = elementRect.height;
-  const windowHeight = window.innerHeight;
-  const scrollTarget = Math.floor(elementTop + elementHeight / 2 - windowHeight / 2);
-  window.scrollTo({
-    top: scrollTarget,
-    behavior: 'smooth'
-  });
-}
-
 secondDownBtn.addEventListener("click", function() {
   scrollToElement("segundo-parrafo");
 });
-
-function scrollToElement(elementId) {
-  const element = document.getElementById(elementId);
-  const elementRect = element.getBoundingClientRect();
-  const offset = window.pageYOffset || document.documentElement.scrollTop;
-  const elementTop = elementRect.top + offset;
-  const elementHeight = elementRect.height;
-  const windowHeight = window.innerHeight;
-  const scrollTarget = Math.floor(elementTop + elementHeight / 2 - windowHeight / 2);
-  window.scrollTo({
-    top: scrollTarget,
-    behavior: 'smooth'
-  });
-}
 
 thirdDownBtn.addEventListener("click", function() {
   scrollToElement("tercer-parrafo");
 });
 
-function scrollToElement(elementId) {
-  const element = document.getElementById(elementId);
-  const elementRect = element.getBoundingClientRect();
-  const offset = window.pageYOffset || document.documentElement.scrollTop;
-  const elementTop = elementRect.top + offset;
-  const elementHeight = elementRect.height;
-  const windowHeight = window.innerHeight;
-  const scrollTarget = Math.floor(elementTop + elementHeight / 2 - windowHeight / 2);
-  window.scrollTo({
-    top: scrollTarget,
-    behavior: 'smooth'
-  });
-}
-
 fourthDownBtn.addEventListener("click", function() {
   scrollToElement("cuarto-parrafo");
 });
-
-function scrollToElement(elementId) {
-  const element = document.getElementById(elementId);
-  const elementRect = element.getBoundingClientRect();
-  const offset = window.pageYOffset || document.documentElement.scrollTop;
-  const elementTop = elementRect.top + offset;
-  const elementHeight = elementRect.height;
-  const windowHeight = window.innerHeight;
-  const scrollTarget = Math.floor(elementTop + elementHeight / 2 - windowHeight / 2);
-  window.scrollTo({
-    top: scrollTarget,
-    behavior: 'smooth'
-  });
-}
 
 fifthDownBtn.addEventListener("click", function() {
   scrollToElement("quinto-parrafo");
 });
 
-function scrollToElement(elementId) {
-  const element = document.getElementById(elementId);
-  const elementRect = element.getBoundingClientRect();
-  const offset = window.pageYOffset || document.documentElement.scrollTop;
-  const elementTop = elementRect.top + offset;
-  const elementHeight = elementRect.height;
-  const windowHeight = window.innerHeight;
-  const scrollTarget = Math.floor(elementTop + elementHeight / 2 - windowHeight / 2);
-  window.scrollTo({
-    top: scrollTarget,
-    behavior: 'smooth'
-  });
-}
-
-fifthDownBtn.addEventListener("click", function() {
+sixthDownBtn.addEventListener("click", function() {
   scrollToElement("video");
 });
-
-video.onclick = function() {
-  audio.pause();
-  document.body.classList.remove('playing');
-};
-
