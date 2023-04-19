@@ -115,3 +115,8 @@ body {
   opacity: 1;
   transition: opacity 2s ease-in-out;
 }
+
+#video{
+  margin: 20vh auto;
+  max-width: 40vw;
+}
