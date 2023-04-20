@@ -7,7 +7,8 @@ const thirdDownBtn = document.getElementById("third-down-btn");
 const fourthDownBtn = document.getElementById("fourth-down-btn");
 const fifthDownBtn = document.getElementById("fifth-down-btn");
 const sixthDownBtn = document.getElementById("sixth-down-btn");
-const video = document.getElementById("video");
+/* const seventhDownBtn = document.getElementById("seventh-down-btn");
+ */const video = document.getElementById("video");
 
 
 function fadeIn(el) {
@@ -72,7 +73,8 @@ fadeIn(thirdDownBtn);
 fadeIn(fourthDownBtn);
 fadeIn(fifthDownBtn);
 fadeIn(sixthDownBtn);
-fadeIn(video);
+/* fadeIn(seventhDownBtn);
+ */fadeIn(video);
 
 playBtn.onclick = function () {
   fadeOut(playBtn)
@@ -144,6 +146,10 @@ fourthDownBtn.addEventListener("click", function() {
 fifthDownBtn.addEventListener("click", function() {
   scrollToElement("quinto-parrafo");
 });
+
+/* sixthDownBtn.addEventListener("click", function() {
+  scrollToElement("sexto-parrafo");
+}); */
 
 sixthDownBtn.addEventListener("click", function() {
   scrollToElement("video");
