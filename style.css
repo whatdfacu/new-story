@@ -120,11 +120,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 50vh auto;
   width: 100%;
-}
-
-#video iframe {
-  max-width: 100%;
-  height: auto;
 }
